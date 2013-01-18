@@ -9,7 +9,7 @@
 #import "BWidget.h"
 
 @implementation BWidget
-//
+// New Comment
 
 - (void)widgetSayHello
 {
