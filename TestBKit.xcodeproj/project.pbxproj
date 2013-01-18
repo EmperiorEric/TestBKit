@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		1458836D16A992D400B01E5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1458836C16A992D400B01E5C /* Foundation.framework */; };
 		1458837216A992D400B01E5C /* TestBKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1458837116A992D400B01E5C /* TestBKit.h */; };
-		1458837416A992D400B01E5C /* TestBKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1458837316A992D400B01E5C /* TestBKit.m */; };
+		145883FE16A9944B00B01E5C /* BWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 145883FD16A9944B00B01E5C /* BWidget.m */; };
+		1458840016A9947B00B01E5C /* TestBKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1458837116A992D400B01E5C /* TestBKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1458840116A9947B00B01E5C /* BWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = 145883FC16A9944B00B01E5C /* BWidget.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,7 +32,8 @@
 		1458836C16A992D400B01E5C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1458837016A992D400B01E5C /* TestBKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestBKit-Prefix.pch"; sourceTree = "<group>"; };
 		1458837116A992D400B01E5C /* TestBKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBKit.h; sourceTree = "<group>"; };
-		1458837316A992D400B01E5C /* TestBKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestBKit.m; sourceTree = "<group>"; };
+		145883FC16A9944B00B01E5C /* BWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWidget.h; sourceTree = "<group>"; };
+		145883FD16A9944B00B01E5C /* BWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWidget.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				1458837116A992D400B01E5C /* TestBKit.h */,
-				1458837316A992D400B01E5C /* TestBKit.m */,
+				145883FC16A9944B00B01E5C /* BWidget.h */,
+				145883FD16A9944B00B01E5C /* BWidget.m */,
 				1458836F16A992D400B01E5C /* Supporting Files */,
 			);
 			path = TestBKit;
@@ -90,6 +94,18 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		145883FF16A9947200B01E5C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1458840016A9947B00B01E5C /* TestBKit.h in Headers */,
+				1458840116A9947B00B01E5C /* BWidget.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		1458836816A992D400B01E5C /* TestBKit */ = {
 			isa = PBXNativeTarget;
@@ -98,6 +114,7 @@
 				1458836516A992D400B01E5C /* Sources */,
 				1458836616A992D400B01E5C /* Frameworks */,
 				1458836716A992D400B01E5C /* CopyFiles */,
+				145883FF16A9947200B01E5C /* Headers */,
 			);
 			buildRules = (
 			);
@@ -139,7 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1458837416A992D400B01E5C /* TestBKit.m in Sources */,
+				145883FE16A9944B00B01E5C /* BWidget.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,24 +213,30 @@
 		1458837816A992D400B01E5C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				DSTROOT = /tmp/TestBKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestBKit/TestBKit-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(BUILT_PRODUCTS_DIR)";
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 			};
 			name = Debug;
 		};
 		1458837916A992D400B01E5C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				DSTROOT = /tmp/TestBKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestBKit/TestBKit-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(BUILT_PRODUCTS_DIR)";
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 			};
 			name = Release;
 		};
@@ -236,6 +259,7 @@
 				1458837916A992D400B01E5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
