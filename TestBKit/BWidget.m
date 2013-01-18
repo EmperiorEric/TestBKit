@@ -15,4 +15,9 @@
     NSLog(@"TestKitB: BWidget Hello");
 }
 
+- (void)widgetSayGoodBye
+{
+    NSLog(@"TestKitB: BWidget GoodBye");
+}
+
 @end

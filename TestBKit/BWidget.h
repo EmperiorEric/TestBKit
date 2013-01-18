@@ -11,5 +11,6 @@
 @interface BWidget : NSObject
 
 - (void)widgetSayHello;
+- (void)widgetSayGoodBye;
 
 @end
